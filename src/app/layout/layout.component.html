@@ -1,0 +1,37 @@
+<div class="main-container" >
+  <app-header
+
+></app-header>
+
+    <mat-sidenav-container [ngClass]="['content-container']">
+      <mat-sidenav #sidenav mode="over" autosize>
+          <div class="menu-container">
+              <div class="menu-close">
+                <mat-icon class="item-icon-close" (click)="sidenav.close()"
+                  >close</mat-icon
+                >
+                <span class="item-text-close">{{
+                  'APP.SIDEMENU.MENU' | translate
+                }}</span>
+              </div>
+            </div>
+      </mat-sidenav>
+      <mat-sidenav-content>
+          <div class='wrap'>
+              <div class='triangle-background'></div>
+              <div class='triangle-background-weak'></div>
+              <div class='triangle-background-strong'></div>
+              <div class='github'>
+              </div>
+              <div class='footer-two'></div>
+              <div class='footer'></div>
+              <div id="router-content" class="router-content" >
+                  <router-outlet></router-outlet>
+              </div>
+            </div>
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+
+  </div>

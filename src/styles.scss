@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/_theming.scss';
+
+@import './styles/_utils.scss';
+body{
+  height:100vh;
+  width: 100vw;
+  background-color:$bck-color;
+}
+
+.container_std{
+  border: 1px solid $primary-color;
+  border-radius: 1rem;
+  margin:2rem;
+  font-family: monospace;
+  color: $text-color;
+}
+.title{
+ font-weight:bold;
+}
+.font12{
+ font-size:12px;
+}
+.font14{
+  font-size:14px;
+ }
+ .font16{
+  font-size:16px;
+ }

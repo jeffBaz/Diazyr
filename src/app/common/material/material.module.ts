@@ -1,0 +1,70 @@
+import { NgModule } from '@angular/core';
+
+import {
+  MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatSidenavModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatTooltipModule,
+  MatGridListModule,
+  MatListModule,
+  MatDividerModule,
+  MatTabsModule,
+  MatSelectModule,
+  MatNativeDateModule,
+  MatDatepickerModule,
+  DateAdapter,
+  MatSnackBarModule,
+  MatProgressSpinnerModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
+  MatPaginatorIntl,
+  MatSliderModule,
+  MatProgressBarModule,
+  MatExpansionModule,
+  MatCheckboxModule,
+  MatStepperModule,
+  MatSlideToggleModule
+} from '@angular/material';
+
+const sharedModules = [
+  MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatSidenavModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatTooltipModule,
+  MatGridListModule,
+  MatListModule,
+  MatDividerModule,
+  MatTabsModule,
+  MatNativeDateModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatSnackBarModule,
+  MatProgressSpinnerModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
+  MatSliderModule,
+  MatProgressBarModule,
+  MatExpansionModule,
+  MatCheckboxModule,
+  MatStepperModule,
+  MatSlideToggleModule,
+];
+
+@NgModule({
+  imports: [...sharedModules],
+  exports: [...sharedModules],
+
+})
+export class MaterialModule {}

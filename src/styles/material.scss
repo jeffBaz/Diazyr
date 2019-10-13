@@ -1,0 +1,72 @@
+@import 'utils';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+	background-color: rgba($focus-color, 0.2);
+	.mat-option-text {
+		color: $text-color;
+	}
+}
+
+.mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+	background: $focus-color;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+	color: $focus-color;
+}
+
+.mat-option.mat-active {
+	background-color: transparent;
+}
+
+.mat-select-panel .mat-optgroup-label,
+.mat-select-panel mat-option.mat-option {
+	line-height: 3.5em;
+	height: 3.5em;
+}
+
+.mat-accent .mat-slider-thumb,
+.mat-accent .mat-slider-thumb-label {
+	background-color: $focus-color;
+}
+
+.mat-accent .mat-slider-track-fill {
+	background-color: $primary-color;
+}
+
+/** OVERRIDE MATERIAL SLIDER **/
+
+.mat-slider-track-background {
+	background-color: #eeeeee;
+}
+
+.mat-slider-horizontal .mat-slider-track-background,
+.mat-slider-horizontal .mat-slider-wrapper,
+.mat-slider-horizontal .mat-slider-track-wrapper,
+.mat-slider-horizontal .mat-slider-track-fill,
+.mat-slider-horizontal .mat-slider-ticks-container,
+.mat-slider-horizontal .mat-slider-ticks {
+	height: 4px !important;
+}
+.mat-slider-horizontal .mat-slider-track-wrapper {
+	@include border-radius-top-left($extra-small-border);
+	@include border-radius-bottom-left($extra-small-border);
+}
+.mat-slider-horizontal .mat-slider-track-background {
+	@include border-radius-top-right($extra-small-border);
+	@include border-radius-bottom-right($extra-small-border);
+}
+
+div.mat-slider-thumb {
+	transform: scale(1);
+	border: none;
+	right: -8px;
+	bottom: -8px;
+	width: 16px;
+	height: 16px;
+}
+
+.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+	border: 1px solid #ccba79;
+}
