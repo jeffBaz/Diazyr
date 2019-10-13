@@ -8,7 +8,6 @@ express()
   .use(express.static(path.join(__dirname, 'dist')))
   .set('views', path.join(__dirname, 'views'))
   .set('port', PORT)
-  .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('dist/index'))
   .get('*', function(req, res) {
 	  res.sendfile('dist/index.html')
