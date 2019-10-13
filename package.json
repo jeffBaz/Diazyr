@@ -1,9 +1,10 @@
 {
   "name": "www",
   "version": "0.0.0",
+  "man": "app.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node app.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
