@@ -11,7 +11,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './common/components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from './common/services/auth.Service';
+import { AuthService } from './common/services/auth.service';
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
