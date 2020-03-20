@@ -1,0 +1,103 @@
+{
+
+  "APP": {
+    "NAME": "Flashlease",
+    "NAME_MD": "FL",
+    "SIDEMENU": {
+      "MENU": "Menu",
+      "DEMANDES": {
+        "TITLE": "Nouvelle demande",
+        "SOUS_MENU1": "Demande de financement",
+        "SOUS_MENU2": "Valeur de rachat",
+        "SOUS_MENU3": "Valeur de rachat avancée",
+        "SOUS_MENU4": "Proposition commerciale"
+      },
+      "DASHBOARD": {
+        "TITLE": " Mes tableaux de bord",
+        "SOUS_MENU1": "Mes demandes de financement",
+        "SOUS_MENU2": "Mes contrats au paiement",
+        "SOUS_MENU3": "Mon parc"
+      },
+      "RECHERCHES": {
+        "TITLE": "Mes recherches",
+        "SOUS_MENU1": "Mes propositions commerciales",
+        "SOUS_MENU2": "Mes valeurs de rachat"
+      },
+      "FORMATIONS": {
+        "TITLE": "Formations"
+      },
+      "COMPTE": {
+        "TITLE": "Mon compte",
+        "USER": {
+          "NOM": "Nom",
+          "PRENOM": "Prénom",
+          "TEL_FIXE": "Téléphone fixe",
+          "TEL_PORTABLE": "Téléphone portable",
+          "EMAIL": "E-mail",
+          "AGENCE": "Agence"
+        }
+      },
+      "DOCUMENTS": {
+        "TITLE": "Mes documents clés"
+      },
+      "FOURNISSEUR": {
+        "TITLE": "Mes fournisseurs"
+      },
+      "CONTACTS": {
+        "TITLE": "Mes contacts Franfinance"
+      },
+      "HELP": {
+        "TITLE": "Besoin d'aide"
+      },
+      "DOCBASE": "Base documentaire",
+      "SERVICES": "Services",
+      "SETTINGS": "Paramètres",
+
+      "CALC": "Calculatrice financière",
+      "DISCONNECT": "Déconnexion"
+    }
+  },
+  "LOGIN": {
+    "USERNAME": "Identifiant",
+    "USERNAME_PLACEHOLDER": "Entrez votre Identifiant",
+    "PWD": "Mot de passe",
+    "PWD_PLACEHOLDER": "Entrez votre mot de passe",
+    "ERRORS": {
+      "LOGIN": {
+        "REQUIRED": "L'identifiant est requis"
+      },
+      "PWD": {
+        "REQUIRED": "Le mot de passe est requis"
+      },
+      "UNAUTHORIZED": "Votre identifiant ou mot de passe est erroné.",
+      "FORBIDDEN": "Cette ressource est protégée et vous n'avez pas les autorisations suffisantes pour y accéder",
+      "SERVER_ERROR": "Une erreur s'est produite, veuillez réessayer plus tard"
+    },
+    "BUTTON": "Connexion",
+    "FORGOTTEN": "Mot de passe oublié ?"
+  },
+  "ERROR_PAGE": {
+    "404_TEXT": "La page cible n'existe pas.",
+    "403_TEXT": "Vous n'êtes pas autorisés à accéder à cette page.",
+    "DEFAULT_TEXT": "Une erreur est survenue, vous n'êtes pas autorisés à accéder à cette page.",
+    "SPECIFIQUE_TEXT": "Une erreur technique est survenue. Veuillez nous excuser pour la gêne occasionnée. Merci de contacter votre interlocuteur commercial."
+  },
+  "HEADER": {
+    "SEARCHBOX": {
+      "PLACEHOLDER": "N° FLASHLEASE"
+    },
+    "DDFBOX": {
+      "BUTTON": "Demande de financement"
+    },
+    "BWSWARNING": "Votre navigateur peut connaitre de legers ralentissements. Pour une meilleure expérience, nous vous invitons à installer Chrome, Safari ou Firefox."
+  },
+  "FOOTER": {
+    "ABOUTUS": "Nos solutions de financement des ventes",
+    "AIDE": "Besoin d'aide ?",
+    "MENTIONS_LEGALES": "Mentions légales",
+    "CHARTE": "Charte de protection des données",
+    "PLAN_SITE": "Plan du site"
+  }
+
+}
+

@@ -128,3 +128,12 @@ body {
 
     @include triangle-inverse( 400px, black );
 }
+
+html:not([data-scroll='0']){
+  .sticky{
+    animation-duration: 200ms;
+    position:fixed;
+    z-index:100;
+  height: fit-content;
+  }
+}

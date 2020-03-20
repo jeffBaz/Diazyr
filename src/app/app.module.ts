@@ -15,6 +15,7 @@ import { AuthService } from './common/services/auth.service';
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BillingGeneratorComponent } from './billing-generator/billing-generator.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -28,6 +29,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AdminComponent,
     LayoutComponent,
     HeaderComponent,
+    BillingGeneratorComponent,
 
   ],
   imports: [
