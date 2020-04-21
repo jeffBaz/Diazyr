@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://pollitics2020.herokuapp.com/api/",
+    "secure": false
+  }
+}

@@ -1,55 +1,62 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './modules/material.module';
 import { AppComponent } from './app.component';
-import { FormRowComponent } from './common/components/form-row/form-row.component';
-import { MaterialModule } from './common/material/material.module';
-import { HomeComponent } from './home/home.component';
-import { AdminComponent } from './admin/admin.component';
+import { CarrouselComponent } from './carrousel/carrousel.component';
 import { LayoutComponent } from './layout/layout.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './common/components/header/header.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from './common/services/auth.service';
-import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { BillingGeneratorComponent } from './billing-generator/billing-generator.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
+
+import { environment } from '../environments/environment';
+import { SlideComponent } from './slide/slide.component';
+import { UtilsLibModule} from 'dia_utils-lib';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SidemenuComponent } from './layout/sidemenu/sidemenu.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
+  return new TranslateHttpLoader(httpClient, environment.i18n, '.json');
 }
-
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AdminComponent,
+    CarrouselComponent,
     LayoutComponent,
     HeaderComponent,
-    BillingGeneratorComponent,
-
+    FooterComponent,
+    SlideComponent,
+    HomeComponent,
+    LoginComponent,
+    SidemenuComponent,
   ],
   imports: [
-    BrowserModule,
     HttpClientModule,
-    MaterialModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
-
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    MaterialModule,
+    SlickCarouselModule,
+    NgxChartsModule,
+    UtilsLibModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    }),
+    })
   ],
   providers: [
-    AuthService,
     TranslateService
   ],
   bootstrap: [AppComponent]

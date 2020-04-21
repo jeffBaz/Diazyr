@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+:host{
+  &:hover{
+    ::ng-deep .slick-next:before{
+      transition-duration: 500ms;
+      color: $primary-color;
+    }
+    ::ng-deep .slick-prev:before{
+      transition-duration: 500ms;
+      color: $primary-color;
+    }
+
+  }
+}

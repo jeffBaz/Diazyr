@@ -1,0 +1,201 @@
+@import "../../../variables.scss";
+.app-header {
+  display: flex;
+  flex-direction: row;
+  color: $primary-color;
+  background-color: $white-color;
+  justify-content: flex-end;
+}
+
+.app-tool-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.icon-menu {
+  cursor: pointer;
+}
+
+.toolbar-shadow {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.app-title {
+  font-weight: bolder;
+  margin-left: 15px;
+  display:flex;
+  align-items:center;
+  cursor: pointer;
+  span {
+    font-size: larger !important;
+  }
+  .mdAppName {
+    display: none;
+  }
+  .lgAppName {
+    /*display: inline;*/
+    padding-top: 2px;
+  }
+  .homeAppName{
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px !important;
+    padding-left:5px;
+    color:$primary-color;
+    cursor:pointer;
+  }
+}
+
+
+.app-title-red-dot {
+  padding-top: 3px;
+  color: red;
+}
+
+.app-header-spacer {
+  width: 40%;
+}
+
+.app-header-right {
+  width: 20%;
+  text-align: right;
+}
+
+.app-header-box {
+  box-shadow: 0px 1px 15px 0px $warm-grey;
+  margin-top: -20px;
+  border-radius: 0 0 25px 25px;
+  margin-left: 8px;
+  a {
+    font-size: 14px;
+  }
+  /*   border-radius: 0 0 25% 25%; */
+}
+
+.app-header-box-ddf {
+  border-radius: 25px 0 0 25px;
+}
+.app-header-siren-box {
+  padding: 5px 10px 10px 10px;
+  width: 300px;
+}
+
+.app-header-notif-box {
+  padding: 8px 10px 7px 10px;
+  color: $tertiary-color;
+  mat-icon {
+    position: relative;
+    bottom: -4px;
+    color: $tertiary-color;
+  }
+}
+
+.app-header-ddf-box {
+  padding: 5px 15px 10px 10px;
+  cursor: pointer;
+  /* text-decoration: underline;*/
+  mat-icon {
+    position: relative;
+    top: 6px;
+    cursor: pointer;
+  }
+  background-color: $primary-color;
+  color: $white-color;
+  a {
+    color: $white-color;
+    font-weight: bold;
+  }
+}
+
+.app-header-logout-box {
+  padding: 5px 10px 10px 10px;
+  mat-icon {
+    position: relative;
+    bottom: -7px;
+    color: $tertiary-color;
+  }
+  cursor: pointer;
+}
+
+.app-header-siren-input {
+  width: 330px;
+
+}
+
+.app-header-siren-search {
+  position: relative;
+  left: -10px;
+  bottom: -7px;
+}
+
+input {
+  background-color: initial;
+  border: initial;
+  height: 25px;
+}
+
+input:focus {
+  box-shadow: initial;
+  border-color: initial;
+}
+
+.empty-result-container {
+  height: 50px;
+  background-color: $tertiary-color;
+}
+
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .app-header-siren-box {
+    //padding: 0 10px 0 10px;
+  }
+  .app-header-box {
+    margin-top:-25px;
+  }
+}
+
+// Mobile specific CSS
+@media only screen and (max-width: 600px) {
+  :host {
+    .app-title {
+      display: none;
+    }
+  }
+  .app-header-ddf-box {
+    position: relative;
+    right: 0px;
+    a {
+      display: none;
+    }
+  }
+  .app-header-spacer {
+    width: 10%;
+  }
+  .app-header-siren-box {
+    width: 50%;
+  }
+}
+//Ipad et tablet
+@media only screen and (max-width: 800px) {
+  :host {
+    .app-title {
+      .mdAppName {
+        display: inline;
+      }
+      .lgAppName {
+        display: none;
+      }
+    }
+    .app-header-siren-box {
+      width: 75%;
+    }
+  }
+}
+@media print {
+  :host{
+    display:none;
+  }
+}

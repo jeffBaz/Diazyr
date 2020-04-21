@@ -1,0 +1,25 @@
+@import "../../variables.scss";
+
+:host{
+  .container{
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    color:$primary-color;
+    app-dossier-bloc{
+      ::ng-deep  .dossierBloc .content-detail .innerContent .templateField .fieldContainer .content {
+          flex:0;
+      }
+    }
+  }
+  a{
+    cursor: pointer;
+    font-size:0.7rem;
+    text-decoration: underline;
+  }
+}
+.providers{
+  width:2rem;
+}

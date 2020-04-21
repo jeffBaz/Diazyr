@@ -1,0 +1,33 @@
+<mat-toolbar class="toolbar-shadow">
+  <mat-toolbar-row>
+    <mat-icon mat-button class="icon-menu" (click)="toggle()">menu</mat-icon>
+    <div class="app-title" (click)="home()" >
+        <span class="lgAppName">{{'APP.NAME'|translate }}</span>
+        <span class="mdAppName">{{'APP.NAME_MD'|translate }}</span>
+        <span class="app-title-red-dot">.</span>
+
+      <mat-icon class="homeAppName">home</mat-icon>
+      <!--span *ngIf="!isProd()" class="app-version">{{appVersion}}</span-->
+    </div>
+
+    <span class="app-header-spacer"></span>
+    <!--   <select #langSelect (change)="translate.use(langSelect.value)">
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+      </select> -->
+    <div class="app-header-box app-header-siren-box">
+      <mat-icon class="app-header-siren-search">search</mat-icon>
+    </div>
+    <span class="app-header-spacer"></span>
+    <div class="app-header-box app-header-box-ddf app-header-ddf-box" *ngIf="logged else login">
+      <mat-icon>account_circle</mat-icon>
+      <a>{{'APP.HEADER.ACCOUNT'|translate}}</a>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<ng-template #login>
+  <div class="app-header-box app-header-box-ddf app-header-ddf-box" (click)="logIn()">
+    <mat-icon>account_box</mat-icon>
+    <a>{{'APP.HEADER.LOGIN'|translate}}</a>
+  </div>
+</ng-template>

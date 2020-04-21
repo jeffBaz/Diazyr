@@ -1,6 +1,40 @@
+@import "../../variables.scss";
+:host{
+  width:100%;
+height:100%;
+}
+.container{
+  .title{
+    font-weight: bold;
+    color:$primary-color;
+    display: flex;
+    align-items: center;
+    ::ng-deep .mat-icon{
+    transition-duration: 500ms;
+    }
+  }
 
-
-.container_std{
-  overflow:hidden;
-
+  .box{
+    background-color:$white-color;
+    box-shadow: 3px 3px 17px -2px $warm-grey;
+    -webkit-box-shadow: 3px 3px 17px -2px $warm-grey;
+    transition-duration: 500ms;
+    border-radius: 1em;
+    margin:1em 2em;
+    padding:2em 1em;
+    overflow: hidden;
+    position: relative;
+    &:hover{
+      background-color: $white-color;
+      box-shadow: 3px 3px 17px -2px $primary-color;
+      -webkit-box-shadow: 3px 3px 17px -2px $primary-color;
+      .title{
+        color:$secondary-color;
+        ::ng-deep .mat-icon{
+         margin:20px;
+          transform:scale(2.5);
+        }
+      }
+    }
+  }
 }

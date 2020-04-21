@@ -1,10 +1,12 @@
 var express = require('express');
 const http = require('http');
 const path = require('path');
+var cors = require('cors');
 const PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 4200
 console.log(`Listening on ${ PORT }`)
 
 express()
+  .use(cors())
   .use(express.static(path.join(__dirname, 'dist')))
   .set('views', path.join(__dirname, 'views'))
   .set('port', PORT)

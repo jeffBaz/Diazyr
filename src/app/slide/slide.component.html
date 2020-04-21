@@ -1,0 +1,18 @@
+<div class="container " (click)="detail()" >
+
+  <div class="img"> <img  *ngIf="!icon" [src]="slide.url_photo" alt="" width="100%" (error)="showIcon()"> <mat-icon  *ngIf="icon" class="iconEmpty">account_circle</mat-icon></div>
+    <div class="cssContainer">
+    <div class="nomPrenom"> <span class="span"> {{slide.nom}} {{slide.prenom}} </span></div>
+    <div [ngClass]="{'note':true, 'good':slide.note>6, 'bad': slide.note<4}"> <!--mat-slider
+      class="notation"
+      tickInterval="1"
+      [disabled]="true"
+      [invert]="false"
+      [max]="10"
+      [min]="0"
+      [step]="1"
+      [(ngModel)]="slide.note"
+      [vertical]="false">
+  </mat-slider-->{{slide.note}} <mat-icon>{{slide.note>6? 'trending_up': slide.note<4 ? 'trending_down': 'trending_flat'}}</mat-icon> </div>
+  </div>
+</div>

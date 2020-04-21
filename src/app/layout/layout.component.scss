@@ -1,139 +1,415 @@
-.router-content{
-  display:flex;
-  justify-content: center;
+@import "../../variables.scss";
+@keyframes example {
+  0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+:host{
+  ::ng-deep .mat-drawer-backdrop{
+    z-index:300;
+  }
+  .side-menu{
+    width:4rem;
+    height:100vh;
+    position:fixed;
+    background-color:  $primary-color;
+  }
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  top:0px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition-duration: 5000ms;
+
+  .router-content{
+    position: absolute;
+    z-index:100;
+    top:0;
+    width:100vw;
+    .content{
+      margin-left:3rem;
+    }
+
+
+  }
+  .header-container {
+    flex: 0;
+    flex-basis: auto;
+    height: auto; //54px;
+  }
+
+  .content-container {
+    flex: 1;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-container {
+    width: 100%;
+    height: 52px;
+    margin-bottom: 10px;
+  }
+
+  mat-sidenav-container {
+    background: linear-gradient(270deg, $primary-color,$white-color);
+    background-size: 200% 200%;
+    animation-name: example;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+
+    mat-sidenav {
+      position: absolute;
+      z-index:2000;
+      left: 0;
+      overflow-y: hidden;
+      @media print{
+        overflow-y: visible;
+      }
+      ::ng-deep .mat-drawer-inner-container{
+        overflow:hidden;
+      }
+      .menu-container {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0 1rem 1rem;
+        width: 20.25rem;
+        height: 100%;
+        background-image:  linear-gradient(90deg, $primary-color, black);
+        overflow:hidden;
+        .menu-close {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          .item-icon-close {
+            flex: 1;
+          }
+          .item-text-close {
+            flex: 7;
+            padding: 1rem;
+          }
+        }
+
+        .menu-content {
+          flex: 1;
+          overflow-y: auto;
+
+          app-collapse-menu {
+            span.item-text {
+              cursor: pointer;
+              padding: 0.25rem;
+            }
+            span.disabled {
+              cursor: initial;
+              color: gray;
+            }
+            span.hidden {
+              display:none;
+            }
+          }
+        }
+
+        .menu-footer {
+          position: relative;
+          padding: 1rem;
+          .btn-deconnexion {
+            flex: 0;
+            width: 78%;
+          }
+          @media all and (-ms-high-contrast: none),
+            (-ms-high-contrast: active) {
+            width: auto;
+          }
+        }
+      }
+
+      mat-sidenav-content {
+        background-color: $white-color;
+      }
+    }
+    mat-sidenav-content {
+      width: 100vw;
+      z-index: auto;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        width: 100%;
+      }
+      //overflow-y: auto;
+      @media print{
+        overflow: visible;
+      }
+
+      .router-content{
+        /*FIX JIRA 814*/
+        min-height: calc(100% - 61px)
+      }
+      //   &::-webkit-scrollbar {
+      //     width: 0px;
+      //     background: transparent ;
+      // }
+    }
+  }
 }
 
-@import '~compass-mixins/lib/compass/css3';
-
-html {
-
-  height: 100%;
+.app-header {
+  display: flex;
+  flex-direction: row;
+  color: $text-color;
+  background-color: $white-color;
+  justify-content: flex-end;
 }
 
-body {
+.app-tool-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
 
-  padding: 0;
-  margin: 0;
+.app-title {
+  font-weight: bolder;
+  span {
+    font-size: larger !important;
+  }
+}
 
-  height: 100%;
+.app-title-red-dot {
+  color: $primary-color;
+}
+
+.app-header-spacer {
+  width: 40%;
+}
+
+.app-header-right {
+  width: 20%;
+  text-align: right;
+}
+
+.app-header-box {
+  box-shadow: 0px 1px 15px 0px $medium-grey;
+  margin-top: -20px;
+  border-radius: 0 0 25px 25px;
+  margin-left: 8px;
+}
+
+.app-header-siren-box {
+  padding: 5px 10px 10px 10px;
+}
+
+.app-header-notif-box {
+  padding: 8px 10px 7px 10px;
+  color: $warm-grey;
+  mat-icon {
+    position: relative;
+    bottom: -4px;
+    color: $warm-grey;
+  }
+}
+
+.app-header-ddf-box {
+  padding: 5px 15px 10px 10px;
+  cursor: pointer;
+  text-decoration: underline;
+  mat-icon {
+    position: relative;
+    top: 6px;
+  }
+  background-color: $primary-color;
+  color: $white-color;
+  a {
+    color: $white-color;
+    font-weight: bold;
+  }
+}
+
+.app-header-logout-box {
+  padding: 5px 10px 10px 10px;
+  mat-icon {
+    position: relative;
+    bottom: -7px;
+    color: $warm-grey;
+  }
+  cursor: pointer;
+}
+
+.app-header-siren-input {
+  width: 330px;
+}
+
+.app-header-siren-search {
+  position: relative;
+  left: -10px;
+  bottom: -7px;
+}
+
+input {
+  background-color: initial;
+  border: initial;
+}
+
+input:focus {
+  box-shadow: initial;
+  border-color: initial;
+}
+.hidden{
+  display:none;
+}
+@media only screen and (max-width: 600px) {
+  :host {
+    .footer-container {
+      display: none;
+    }
+    .main-container {
+      mat-sidenav-container {
+        mat-sidenav {
+          .menu-container {
+            .menu-content {
+              .item-menu {
+                padding: 5px 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // specific IE11
+  //@media (-ms-high-contrast: none), (-ms-high-contrast: active) {}
+}
+
+@media print {
+  .mat-drawer-container{
+    overflow : visible;
+  }
 }
 
 @mixin triangle( $size, $color ) {
 
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: $size $size 0 0;
-    border-color: $color transparent transparent transparent;
-  transition: border-width 0.5s;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $size $size 0 0;
+  border-color: $color transparent transparent transparent;
+transition: border-width 0.5s;
 }
 
 @mixin triangle-inverse( $size, $color ) {
 
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 0 $size;
-    border-color: transparent transparent $color transparent;
-  transition: border-width 0.5s;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 0 $size;
+  border-color: transparent transparent $color transparent;
+transition: border-width 0.5s;
 }
 
 .triangle-background {
 
-    @include triangle( 700px, #F9F9F9 );
+  @include triangle( 700px, $medium-grey );
 }
 
 .triangle-background-weak {
 
-    position: absolute;
+  position: absolute;
 
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
 
-    @include triangle( 500px, #E8E8E8 );
+  @include triangle( 500px, $secondary-color );
 }
 
 .triangle-background-strong {
 
-    position: absolute;
+  position: absolute;
 
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
 
-    @include triangle( 400px, #D45E99 );
+  @include triangle( 400px, $primary-color );
 }
-
+.wrap1{
+  transition-duration: 500ms;
+  //background-color:$warm-grey;
+}
+.wrap1:hover{
+  transition-duration: 500ms;
+ // background-image:  linear-gradient(90deg, black, $primary-color);
 .wrap {
 
-  height: 100%;
+height: 100%;
 
-  position: relative;
+position: relative;
 
-  &:hover {
+& {
 
-    .triangle-background {
+  .triangle-background {
 
-      border-width: 700px 0 0 0;
-    }
+    border-width: 700px 0 0 0;
+  }
 
-    .triangle-background-weak {
+  .triangle-background-weak {
 
-      border-width: 0 500px 0 0;
-    }
+    border-width: 0 500px 0 0;
+  }
 
-    .triangle-background-strong {
+  .triangle-background-strong {
 
-      border-width: 400px 0 0 0;
-    }
+    border-width: 400px 0 0 0;
+  }
 
-    .github {
+  .github {
 
-      border-width: 0 100px 0 0;
-    }
+    border-width: 0 100px 0 0;
+  }
 
-    .footer {
+  .footer {
 
-      border-width: 0 0 200px 200px;
-    }
+    border-width: 0 0 200px 200px;
   }
 }
-
+}
+}
 .github {
-    position: absolute;
+  position: absolute;
 
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
 
-    @include triangle( 100px, black );
+  @include triangle( 100px, $tertiary-color );
 }
 
 
 .footer {
-    position: absolute;
+  position: absolute;
 
-    right: 0;
-    bottom: 0;
+  right: 0;
+  bottom: 0;
 
-    @include triangle-inverse( 200px, #333 );
+  @include triangle-inverse( 200px, $secondary-color );
 }
 
 
 .footer-two {
-    position: absolute;
+  position: absolute;
 
-    right: 0;
-    top: 0;
+  right: 0;
+  top: 0;
 
-    @include triangle-inverse( 400px, black );
+  @include triangle-inverse( 400px, black );
 }
 
 html:not([data-scroll='0']){
-  .sticky{
-    animation-duration: 200ms;
-    position:fixed;
-    z-index:100;
-  height: fit-content;
-  }
+.sticky{
+  animation-duration: 200ms;
+  position:fixed;
+  z-index:100;
+height: fit-content;
+}
 }
