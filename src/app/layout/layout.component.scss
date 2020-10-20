@@ -336,6 +336,7 @@ transition: border-width 0.5s;
 }
 .wrap1{
   transition-duration: 500ms;
+  overflow:hidden;
   //background-color:$warm-grey;
 }
 .wrap1:hover{

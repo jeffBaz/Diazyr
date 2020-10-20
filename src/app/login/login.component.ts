@@ -22,8 +22,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.fb.group({});
-     this.buildLogin();
-     this.buildsubscriber();
+   // this.ts.get('').subscribe(_ => {
+      this.buildLogin();
+      this.buildsubscriber();
+    //});
   }
   buildLogin() {
     const list: Dossier[] = [];

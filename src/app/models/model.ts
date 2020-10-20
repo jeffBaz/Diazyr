@@ -1,46 +1,46 @@
-export  interface BddId{
-  _id?:string;
+export interface BddId {
+  _id?: string;
 }
-export interface User extends BddId{
+export interface User extends BddId {
   prenom?: string;
-  nom?:string;
-  email?:string;
-  mot_de_passe?:string;
-  pseudonyme?:string;
-  tendance_politique?:string;
-  url_photo_profil?:string;
-  notes?:Note[]
+  nom?: string;
+  email?: string;
+  mot_de_passe?: string;
+  pseudonyme?: string;
+  tendance_politique?: string;
+  url_photo_profil?: string;
+  notes?: Note[]
 }
 
-export interface Question  extends BddId{
+export interface Question extends BddId {
   question?: string;
-  reponses?:Reponse[];
-  notes?:Note[]
-  index?:number;//specific
+  reponses?: Reponse[];
+  notes?: Note[]
+  index?: number;//specific
 }
-export interface Reponse  extends BddId{
+export interface Reponse extends BddId {
   reponse?: string;
 }
-export interface Politicien  extends BddId{
+export interface Politicien extends BddId {
   prenom?: string;
-  nom?:string;
-  age?:number;
-  parti?:string;
-  url_photo?:string;
-  note?:number;
+  nom?: string;
+  age?: number;
+  parti?: string;
+  url_photo?: string;
+  note?: number;
 }
 
-export interface Note  extends BddId{
-  id_politicien ?: string,
-   note ?: number
+export interface Note extends BddId {
+  id_politicien?: string,
+  note?: number
 }
 
-export interface Response{
+export interface Response {
   total?: number;
   page?: number;
   pageSize?: number;
   totalPages?: number;
-  rows?:any;
+  rows?: any;
 }
 export interface UserAccount {
   nom?: string;
@@ -53,9 +53,31 @@ export interface UserAccount {
   roles?: any;
   id?: string;
 }
-export interface Menu{
-  class?:string;
-  icon?:string;
-  libelle?:string;
-  action?:()=>{}
+export interface Menu {
+  class?: string;
+  icon?: string;
+  libelle?: string;
+  action?: () => {}
+}
+export interface Prestation {
+  desc?: string;
+  duree?: number;
+  id?: string;
+  prestataire: Prestataire;
+  prix?: number
+  titre?: string
+  typePrestation?: number;
+  url?: string;
+}
+
+export interface Prestataire {
+  id?: string;
+  nom?: string;
+  prenom?: string;
+}
+export interface TypePrestation {
+  libelle?: string;
+  id?: string;
+  desc?: string;
+  url?: string;
 }

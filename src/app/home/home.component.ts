@@ -19,12 +19,13 @@ export class HomeComponent implements OnInit {
   constructor(private api : ApiService) { }
 
   ngOnInit() {
-    this.api.getPoliticiens().subscribe(_=>{
+   /* this.api.getPoliticiens().subscribe(_=>{
      // this.politiciens = (_.content.rows) as Politicien[];
     })
     this.api.getQuestions().subscribe(_=>{
       this.questions = (_.content.rows) as Question[];
-    })
+    })*/
+    
   }
 
 }

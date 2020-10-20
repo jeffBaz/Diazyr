@@ -4,6 +4,14 @@
 height:100%;
 }
 .container{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height:80vh;
+  .Logo img{
+    width:90vw;
+    
+  }
   .title{
     font-weight: bold;
     color:$primary-color;

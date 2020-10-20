@@ -1,0 +1,50 @@
+<div class="container">
+    <app-collapse-panel  title="Prestataires" >
+        <app-input [ngModel]="searchText"></app-input>
+        {{prestataireForm|json}}
+        <mat-chip-list aria-label="Liste des prestataires ">
+            <mat-chip selectable="true" *ngFor="let prestataire of prestataires " (click)="loadPrestataire(prestataire)">
+                {{prestataire?.nom + ' ' + prestataire?.prenom}}
+                <mat-icon  (click)="uploadPrestataire(prestataire)" *ngIf="!prestataire.id">local_fire_department</mat-icon>
+                <mat-icon (click)="refreshPrestataire(prestataire)" *ngIf="prestataire.id">refresh</mat-icon>
+                <mat-icon (click)="deletePrestataire(prestataire)">close</mat-icon>
+            </mat-chip>
+        </mat-chip-list>
+        <button mat-button (click)="addPrestataire()"><mat-icon>add</mat-icon></button>
+        <app-dossier-bloc   
+           [items]="prestataireForm"
+           [modifiable]="true"
+           [nbColumns]="3"
+           [translateSuffix]="'APP.AKOYAWA.'"
+           >
+       </app-dossier-bloc>
+    </app-collapse-panel>
+    <app-collapse-panel  title="Prestations" >
+        <app-input [ngModel]="searchText"></app-input>
+        <mat-chip-list aria-label="Liste des prestation ">
+            <mat-chip selectable="true" *ngFor="let prestataire of prestations " (click)="loadPrestation(prestataire)">{{prestataire?.titre}}</mat-chip>
+        </mat-chip-list>
+       <button mat-button (click)="addPrestation()"><mat-icon>add</mat-icon></button>
+       <app-dossier-bloc 
+        [items]="prestationsForm"
+        [modifiable]="true"
+        [nbColumns]="3"
+        [translateSuffix]="'APP.AKOYAWA.'"
+        >
+        </app-dossier-bloc>
+    </app-collapse-panel>
+   <app-collapse-panel  title="Type de Prestations" >
+    <app-input [ngModel]="searchText"></app-input>
+    <mat-chip-list aria-label="Liste des types de prestations ">
+        <mat-chip selectable="true" *ngFor="let prestataire of typePrestations " (click)="loadTypePrestation(prestataire)">{{prestataire?.libelle}}</mat-chip>
+    </mat-chip-list>
+   <button mat-button (click)="addTypePrestation()"><mat-icon>add</mat-icon></button>
+   <app-dossier-bloc 
+   [items]="typePrestationsForm"
+   [modifiable]="true"
+   [nbColumns]="3"
+   [translateSuffix]="'APP.AKOYAWA.'"
+   >
+</app-dossier-bloc>    
+</app-collapse-panel>
+</div>

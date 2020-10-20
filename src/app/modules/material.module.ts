@@ -29,6 +29,8 @@ import {
   MatExpansionModule,
   MatCheckboxModule,
   MatStepperModule,
+  MatChipsModule,
+  MatSlideToggleModule
 } from '@angular/material';
 
 import { MatDialogModule } from '@angular/material/dialog';
@@ -62,6 +64,8 @@ const sharedModules = [
   MatExpansionModule,
   MatCheckboxModule,
   MatStepperModule,
+  MatChipsModule, 
+  MatSlideToggleModule
 ];
 
 @NgModule({

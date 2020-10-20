@@ -14,14 +14,17 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-
-
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { SlideComponent } from './slide/slide.component';
 import { UtilsLibModule} from 'dia_utils-lib';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SidemenuComponent } from './layout/sidemenu/sidemenu.component';
+import { AkoyawaComponent } from './akoyawa/akoyawa.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, environment.i18n, '.json');
@@ -37,6 +40,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HomeComponent,
     LoginComponent,
     SidemenuComponent,
+    AkoyawaComponent
   ],
   imports: [
     HttpClientModule,
@@ -48,6 +52,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SlickCarouselModule,
     NgxChartsModule,
     UtilsLibModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -6,5 +6,13 @@
 export const environment = {
   production: false,
   i18n: 'assets/i18n/',
-  backend:'https://pollitics2020.herokuapp.com/api/'
+  backend:'https://pollitics2020.herokuapp.com/api/',
+  firebase: {
+    apiKey: 'AIzaSyB8efztwXl-AKhdQKqfdpbqSwmNtrpnulo',
+    authDomain: 'akoyawa-a05c3.firebaseapp.com',
+    databaseURL: 'https://akoyawa-a05c3.firebaseio.com',
+    projectId: 'akoyawa-a05c3',
+    storageBucket: 'akoyawa-a05c3.appspot.com',
+    messagingSenderId: '380558604887'
+  }
 };

@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-slider [(ngModel)]="subscribing" >{{'APP.ADMIN.CONNECT_INSCRIPT'|translate}}</mat-slider>
+  <mat-slide-toggle [(ngModel)]="subscribing" >{{'APP.ADMIN.CONNECT_INSCRIPT'|translate}}</mat-slide-toggle>
     <app-dossier-bloc
     [items]="subscribing?subscribe.list:login.list"
     [modifiable]="true"
@@ -9,5 +9,5 @@
   </app-dossier-bloc>
   <button mat-button (click)="connect()">{{(subscribing?'APP.ADMIN.SUBSCRIBE':'APP.ADMIN.LOGIN')|translate}}</button>
   <a (click)="forget()">{{'APP.ADMIN.FORGET'|translate}}</a>
-  <img class="providers" src="../../../assets/images/google-cloud-logo.png" (click)="loginGoogle()">
+  <!--img class="providers" src="../../../assets/images/google-cloud-logo.png" (click)="loginGoogle()"-->
 </div>

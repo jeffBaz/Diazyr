@@ -4,13 +4,17 @@ import { Dossier } from 'dia_utils-lib';
 import { Validators, FormGroup } from '@angular/forms';
 import { UserAccount } from '../models/model';
 import { TranslateService } from '@ngx-translate/core';
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { MatSnackBar } from '@angular/material';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   isLogged = false;
   logged = new Subject<boolean>();
-  constructor(private ts: TranslateService) { }
+  constructor(private ts: TranslateService,public afAuth: AngularFireAuth,  private db: AngularFirestore, private snack:MatSnackBar) { }
 
   login(){
     this.isLogged=true;

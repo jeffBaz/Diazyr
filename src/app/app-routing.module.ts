@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component'
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { AkoyawaComponent } from './akoyawa/akoyawa.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
       component: LoginComponent
       // canActivate: [LoggedGuard]
     }]
+  }, {
+    path: 'akoyawa',
+    component: AkoyawaComponent
+    // canActivate: [LoggedGuard]
   }
 ];
 
