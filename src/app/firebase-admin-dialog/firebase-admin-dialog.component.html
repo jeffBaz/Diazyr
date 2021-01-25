@@ -1,0 +1,15 @@
+<div class="container">
+    <div mat-dialog-content>
+        <app-dossier-bloc [items]="item"
+        [modifiable]="true"
+        [nbColumns]="size"
+        >
+
+           </app-dossier-bloc>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <app-input #field icon="add" placeholder="Nvx champs" (iconWasClicked)= "addField(field.value)"></app-input>
+    <button mat-button [mat-dialog-close]="model" >Enregistrer</button>
+    
+</div>

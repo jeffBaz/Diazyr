@@ -1,0 +1,40 @@
+:host{
+    animation-duration: 500ms;
+    background-color: black;
+    color: white;
+    .container{
+        display:grid;
+        grid-gap: 10px;
+        grid-template-areas:
+        'sider sider cont cont cont cont'
+        ;
+      
+    }
+    .container>div{
+
+        animation-duration: 500ms;
+            background-color: rgba(19, 20, 20, 0.712);
+            text-align: center;
+            padding: 20px;
+    }
+    .collections{
+        grid-area:sider;
+        height:100vh;
+        overflow-y: auto;
+        
+    }
+    .collection{
+        grid-area:cont;
+        height:100vh;
+        overflow-y: auto;
+        
+    }
+    mat-icon{
+        animation-duration: 500ms;
+        cursor: pointer;
+        transform: scale(0.5);
+        &:hover{
+            transform: scale(0.7);
+        }
+    }
+}

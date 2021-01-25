@@ -1,0 +1,32 @@
+<div class="container">
+   <div class="collections">
+    <div class="title">Collections :</div>
+
+        <!--app-collapse-panel  [title]="col" *ngFor="let col of collectionsId"></app-collapse-panel-->
+        <mat-chip-list aria-label="col" >
+            <mat-chip selectable="data[col]" *ngFor="let col of collectionsId" (click)="selectCollection(col)">
+                {{col}}
+                <mat-icon (click)="deleteCollection(col)">close</mat-icon>
+                <!--mat-icon  (click)="uploadPrestataire(prestataire)" *ngIf="!prestataire.id">local_fire_department</mat-icon>
+                <mat-icon (click)="refreshPrestataire(prestataire)" *ngIf="prestataire.id">refresh</mat-icon>
+                -->
+            </mat-chip>
+        </mat-chip-list>
+        <app-input #col [icon]="'add'" (iconWasClicked)="addCollection(col.value)" placeholder="Nvl collection"></app-input>
+   </div>
+    <div class="collection" *ngIf="data[currentCollectionKey]">
+        <div class="title">Documents :</div>
+        <!--app-collapse-panel  [title]="col" *ngFor="let col of collectionsId"></app-collapse-panel-->
+        <mat-chip-list aria-label="col">
+            <mat-chip selectable="item" *ngFor="let item of data[currentCollectionKey]" (click)="modifyItem(item, currentCollectionKey )">
+                <mat-icon (click)="deleteDocument(currentCollectionKey, item)">close</mat-icon>
+                {{item|json}}
+                <!--mat-icon  (click)="uploadPrestataire(prestataire)" *ngIf="!prestataire.id">local_fire_department</mat-icon>
+                <mat-icon (click)="refreshPrestataire(prestataire)" *ngIf="prestataire.id">refresh</mat-icon>
+                <mat-icon (click)="deletePrestataire(prestataire)">close</mat-icon-->
+            </mat-chip>
+        </mat-chip-list>
+        <button mat-button (click)="createItem({}, currentCollectionKey)">Ajout de document</button>
+    </div>
+   <button mat-button *ngIf="initConfig" (click)="generateConfig()">init Config</button>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Prestataire, Prestation, TypePrestation } from 'app/models/model';
 import { Dossier } from 'dia_utils-lib';
+import * as env from '../../environments/environment';
 
 @Component({
   selector: 'app-akoyawa',
@@ -9,6 +10,7 @@ import { Dossier } from 'dia_utils-lib';
   styleUrls: ['./akoyawa.component.scss']
 })
 export class AkoyawaComponent implements OnInit {
+  config = env.environment.applications.CONFIGURATION;
   prestationsForm = [];
   typePrestationsForm: any = [];
   prestataireForm: any = [];
@@ -17,7 +19,7 @@ export class AkoyawaComponent implements OnInit {
   typePrestations: TypePrestation[] = [];
   nbColumns = 3;
   prestations: Prestation[];
-  constructor(private db: AngularFirestore) { }
+  constructor(public db: AngularFirestore) { }
 
   ngOnInit() {
     this.getPrestations();

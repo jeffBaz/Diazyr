@@ -1,5 +1,5 @@
 <div class="container">
-    <app-collapse-panel  title="Prestataires" >
+    <!--app-collapse-panel  title="Prestataires" >
         <app-input [ngModel]="searchText"></app-input>
         {{prestataireForm|json}}
         <mat-chip-list aria-label="Liste des prestataires ">
@@ -46,5 +46,6 @@
    [translateSuffix]="'APP.AKOYAWA.'"
    >
 </app-dossier-bloc>    
-</app-collapse-panel>
+</app-collapse-panel-->
+<app-firebase-admin [db]="db" [config]="config" [collectionsId]="['prestataires']"></app-firebase-admin>
 </div>

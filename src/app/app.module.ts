@@ -25,6 +25,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SidemenuComponent } from './layout/sidemenu/sidemenu.component';
 import { AkoyawaComponent } from './akoyawa/akoyawa.component';
+import { FirebaseAdminComponent } from './firebase-admin/firebase-admin.component';
+import { FirebaseAdminDialogComponent } from './firebase-admin-dialog/firebase-admin-dialog.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, environment.i18n, '.json');
@@ -40,8 +42,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HomeComponent,
     LoginComponent,
     SidemenuComponent,
-    AkoyawaComponent
+    AkoyawaComponent,
+    FirebaseAdminComponent,
+    FirebaseAdminDialogComponent
   ],
+  entryComponents:[FirebaseAdminDialogComponent],
   imports: [
     HttpClientModule,
     BrowserAnimationsModule,
@@ -55,7 +60,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.applications.story.firebase),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
